@@ -1,204 +1,140 @@
 package com.company;
 public class HogwartsService {
 
-    public static void printStudent(Hogwarts[] hogwarts, String name, String surname) {
-        System.out.println("Характеристика студента: " + name + " " + surname);
-        for (int i = 0; i < hogwarts.length; i++) {
-            if (hogwarts[i].getName() == name && hogwarts[i].getSurname() == surname) {
-                System.out.println(hogwarts[i]);
-            }
-        }
+    public static void printStudent(Hogwarts hogwarts) {
+        System.out.println(hogwarts.getName() + " " + hogwarts.getSurname());
+        System.out.println(hogwarts);
     }
 
-    public static void comparisonStudentsOfSameFaculty(Gryffindor[] gryffindor, String name1, String surname1, String name2, String surname2) {
-        Gryffindor a = null;
-        Gryffindor b = null;
-        for (int i = 0; i < gryffindor.length; i++) {
-            if (gryffindor[i].getName() == name1 && gryffindor[i].getSurname() == surname1) {
-                a = gryffindor[i];
-            }
-        }
-        for (int i = 0; i < gryffindor.length; i++) {
-            if (gryffindor[i].getName() == name2 && gryffindor[i].getSurname() == surname2) {
-                b = gryffindor[i];
-            }
-        }
-        if (a.getCourage() < b.getCourage()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " благороднее, чем " + b.getName() + " " + b.getSurname());
-        } else if (b.getCourage() < a.getCourage()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " благороднее, чем " + a.getName() + " " + a.getSurname());
+    public static void comparisonStudentsOfSameFaculty(Gryffindor gryffindor1, Gryffindor gryffindor2) {
+        if (gryffindor1.getCourage() > gryffindor2.getCourage()) {
+            System.out.println(gryffindor1.getName() + " " + gryffindor1.getSurname() + " благороднее, чем " + gryffindor2.getName() + " " + gryffindor2.getSurname());
+        } else if (gryffindor2.getCourage() > gryffindor1.getCourage()) {
+            System.out.println(gryffindor2.getName() + " " + gryffindor2.getSurname() + " благороднее, чем " + gryffindor1.getName() + " " + gryffindor1.getSurname());
         } else {
             System.out.println("В блогородности они одинаковы");
         }
-        if (a.getCourage() < b.getCourage()) {
-            System.out.println("У " + a.getName() + " " + a.getSurname() + " больше чести, чем у  " + b.getName() + " " + b.getSurname());
-        } else if (b.getCourage() < a.getCourage()) {
-            System.out.println("У " + b.getName() + " " + b.getSurname() + " больше чести, чем у " + a.getName() + " " + a.getSurname());
+        if (gryffindor1.getCourage() > gryffindor2.getCourage()) {
+            System.out.println("У " + gryffindor1.getName() + " " + gryffindor1.getSurname() + " больше чести, чем у  " + gryffindor2.getName() + " " + gryffindor2.getSurname());
+        } else if (gryffindor2.getCourage() > gryffindor1.getCourage()) {
+            System.out.println("У " + gryffindor2.getName() + " " + gryffindor2.getSurname() + " больше чести, чем у " + gryffindor1.getName() + " " + gryffindor1.getSurname());
         } else {
             System.out.println("В чести они одинаковы");
         }
-        if (a.getCourage() < b.getCourage()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " храбрее, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getCourage() < a.getCourage()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " храбрее, чем " + a.getName() + " " + a.getSurname());
+        if (gryffindor1.getCourage() > gryffindor2.getCourage()) {
+            System.out.println(gryffindor1.getName() + " " + gryffindor1.getSurname() + " храбрее, чем  " + gryffindor2.getName() + " " + gryffindor2.getSurname());
+        } else if (gryffindor2.getCourage() > gryffindor1.getCourage()) {
+            System.out.println(gryffindor2.getName() + " " + gryffindor2.getSurname() + " храбрее, чем " + gryffindor1.getName() + " " + gryffindor1.getSurname());
         } else {
             System.out.println("В храбрости они одинаковы");
         }
     }
 
-    public static void comparisonStudentsOfSameFaculty(Slytherin[] slytherin, String name1, String surname1, String name2, String surname2) {
-        Slytherin a = null;
-        Slytherin b = null;
-        for (int i = 0; i < slytherin.length; i++) {
-            if (slytherin[i].getName() == name1 && slytherin[i].getSurname() == surname1) {
-                a = slytherin[i];
-            }
-        }
-        for (int i = 0; i < slytherin.length; i++) {
-            if (slytherin[i].getName() == name2 && slytherin[i].getSurname() == surname2) {
-                b = slytherin[i];
-            }
-        }
-        if (a.getCunning() < b.getCunning())  {
-            System.out.println(a.getName() + " " + a.getSurname() + " хитрее, чем " + b.getName() + " " + b.getSurname());
-        } else if (b.getCunning() < a.getCunning()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " хитрее, чем " + a.getName() + " " + a.getSurname());
+    public static void comparisonStudentsOfSameFaculty(Slytherin slytherin1, Slytherin slytherin2) {
+        if (slytherin1.getCunning() > slytherin2.getCunning())  {
+            System.out.println(slytherin1.getName() + " " + slytherin1.getSurname() + " хитрее, чем " + slytherin2.getName() + " " + slytherin2.getSurname());
+        } else if (slytherin2.getCunning() > slytherin1.getCunning()) {
+            System.out.println(slytherin2.getName() + " " + slytherin2.getSurname() + " хитрее, чем " + slytherin1.getName() + " " + slytherin1.getSurname());
         } else {
             System.out.println("В хитрости они одинаковы");
         }
-        if (a.getDetermination() < b.getDetermination()) {
-            System.out.println("У " + a.getName() + " " + a.getSurname() + " больше решительности, чем у  " + b.getName() + " " + b.getSurname());
-        } else if (b.getDetermination() < a.getDetermination()) {
-            System.out.println("У " + b.getName() + " " + b.getSurname() + " больше решительности, чем у " + a.getName() + " " + a.getSurname());
+        if (slytherin1.getDetermination() > slytherin2.getDetermination()) {
+            System.out.println("У " + slytherin1.getName() + " " + slytherin1.getSurname() + " больше решительности, чем у  " + slytherin2.getName() + " " + slytherin2.getSurname());
+        } else if (slytherin2.getDetermination() > slytherin1.getDetermination()) {
+            System.out.println("У " + slytherin2.getName() + " " + slytherin2.getSurname() + " больше решительности, чем у " + slytherin1.getName() + " " + slytherin1.getSurname());
         } else {
             System.out.println("В решительности они одинаковы");
         }
-        if (a.getAmbition() < b.getAmbition()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " амбициознее, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getAmbition() < a.getAmbition()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " амбициознее, чем " + a.getName() + " " + a.getSurname());
+        if (slytherin1.getAmbition() > slytherin2.getAmbition()) {
+            System.out.println(slytherin1.getName() + " " + slytherin1.getSurname() + " амбициознее, чем  " + slytherin2.getName() + " " + slytherin2.getSurname());
+        } else if (slytherin2.getAmbition() > slytherin1.getAmbition()) {
+            System.out.println(slytherin2.getName() + " " + slytherin2.getSurname() + " амбициознее, чем " + slytherin1.getName() + " " + slytherin1.getSurname());
         } else {
             System.out.println("В амбициозности они одинаковы");
         }
-        if (a.getResourcefulness() < b.getResourcefulness()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " находчивее, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getResourcefulness() < a.getResourcefulness()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " находчивее, чем " + a.getName() + " " + a.getSurname());
+        if (slytherin1.getResourcefulness() > slytherin2.getResourcefulness()) {
+            System.out.println(slytherin1.getName() + " " + slytherin1.getSurname() + " находчивее, чем  " + slytherin2.getName() + " " + slytherin2.getSurname());
+        } else if (slytherin2.getResourcefulness() > slytherin1.getResourcefulness()) {
+            System.out.println(slytherin2.getName() + " " + slytherin2.getSurname() + " находчивее, чем " + slytherin1.getName() + " " + slytherin1.getSurname());
         } else {
             System.out.println("В находчивости они одинаковы");
         }
-        if (a.getLustForPower() < b.getLustForPower()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " жажда власти больше, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getLustForPower() < a.getLustForPower()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " жажда власти больше, чем " + a.getName() + " " + a.getSurname());
+        if (slytherin1.getLustForPower() > slytherin2.getLustForPower()) {
+            System.out.println(slytherin1.getName() + " " + slytherin1.getSurname() + " жажда власти больше, чем  " + slytherin2.getName() + " " + slytherin2.getSurname());
+        } else if (slytherin2.getLustForPower() > slytherin1.getLustForPower()) {
+            System.out.println(slytherin2.getName() + " " + slytherin2.getSurname() + " жажда власти больше, чем " + slytherin1.getName() + " " + slytherin1.getSurname());
         } else {
             System.out.println("В жажде власти они одинаковы");
         }
     }
 
-    public static void comparisonStudentsOfSameFaculty(Hufflepuff[] hufflepuffs, String name1, String surname1, String name2, String surname2) {
-        Hufflepuff a = null;
-        Hufflepuff b = null;
-        for (int i = 0; i < hufflepuffs.length; i++) {
-            if (hufflepuffs[i].getName() == name1 && hufflepuffs[i].getSurname() == surname1) {
-                a = hufflepuffs[i];
-            }
-        }
-        for (int i = 0; i < hufflepuffs.length; i++) {
-            if (hufflepuffs[i].getName() == name2 && hufflepuffs[i].getSurname() == surname2) {
-                b = hufflepuffs[i];
-            }
-        }
-        if (a.getHardWork() < b.getHardWork()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " трудолюбивие, чем " + b.getName() + " " + b.getSurname());
-        } else if (b.getHardWork() < a.getHardWork()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " трудолюбивее, чем " + a.getName() + " " + a.getSurname());
+    public static void comparisonStudentsOfSameFaculty(Hufflepuff hufflepuff1, Hufflepuff hufflepuff2) {
+        if (hufflepuff1.getHardWork() < hufflepuff2.getHardWork()) {
+            System.out.println(hufflepuff1.getName() + " " + hufflepuff1.getSurname() + " трудолюбивие, чем " + hufflepuff2.getName() + " " + hufflepuff2.getSurname());
+        } else if (hufflepuff2.getHardWork() < hufflepuff1.getHardWork()) {
+            System.out.println(hufflepuff2.getName() + " " + hufflepuff2.getSurname() + " трудолюбивее, чем " + hufflepuff1.getName() + " " + hufflepuff1.getSurname());
         } else {
             System.out.println("В трудолюбии они одинаковы");
         }
-        if (a.getLoyalty() < b.getLoyalty()) {
-            System.out.println("У " + a.getName() + " " + a.getSurname() + " больше верности, чем у  " + b.getName() + " " + b.getSurname());
-        } else if (b.getLoyalty() < a.getLoyalty()) {
-            System.out.println("У " + b.getName() + " " + b.getSurname() + " больше верности, чем у " + a.getName() + " " + a.getSurname());
+        if (hufflepuff1.getLoyalty() < hufflepuff2.getLoyalty()) {
+            System.out.println("У " + hufflepuff1.getName() + " " + hufflepuff1.getSurname() + " больше верности, чем у  " + hufflepuff2.getName() + " " + hufflepuff2.getSurname());
+        } else if (hufflepuff2.getLoyalty() < hufflepuff1.getLoyalty()) {
+            System.out.println("У " + hufflepuff2.getName() + " " + hufflepuff2.getSurname() + " больше верности, чем у " + hufflepuff1.getName() + " " + hufflepuff1.getSurname());
         } else {
             System.out.println("В верности они одинаковы");
         }
-        if (a.getHonesty() < b.getHonesty()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " честнее, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getHonesty() < a.getHonesty()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " честнее, чем " + a.getName() + " " + a.getSurname());
+        if (hufflepuff1.getHonesty() < hufflepuff2.getHonesty()) {
+            System.out.println(hufflepuff1.getName() + " " + hufflepuff1.getSurname() + " честнее, чем  " + hufflepuff2.getName() + " " + hufflepuff2.getSurname());
+        } else if (hufflepuff2.getHonesty() < hufflepuff1.getHonesty()) {
+            System.out.println(hufflepuff2.getName() + " " + hufflepuff2.getSurname() + " честнее, чем " + hufflepuff1.getName() + " " + hufflepuff1.getSurname());
         } else {
             System.out.println("В честности они одинаковы");
         }
     }
 
-    public static void comparisonStudentsOfSameFaculty(Ravenclaw[] ravenclaws, String name1, String surname1, String name2, String surname2) {
-        Ravenclaw a = null;
-        Ravenclaw b = null;
-        for (int i = 0; i < ravenclaws.length; i++) {
-            if (ravenclaws[i].getName() == name1 && ravenclaws[i].getSurname() == surname1) {
-                a = ravenclaws[i];
-            }
-        }
-        for (int i = 0; i < ravenclaws.length; i++) {
-            if (ravenclaws[i].getName() == name2 && ravenclaws[i].getSurname() == surname2) {
-                b = ravenclaws[i];
-            }
-        }
-        if (a.getIntelligence() < b.getIntelligence())  {
-            System.out.println(a.getName() + " " + a.getSurname() + " умнее, чем " + b.getName() + " " + b.getSurname());
-        } else if (b.getIntelligence() < a.getIntelligence()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " умнее, чем " + a.getName() + " " + a.getSurname());
+    public static void comparisonStudentsOfSameFaculty(Ravenclaw ravenclaws1,Ravenclaw ravenclaws2) {
+        if (ravenclaws1.getIntelligence() > ravenclaws2.getIntelligence())  {
+            System.out.println(ravenclaws1.getName() + " " + ravenclaws1.getSurname() + " умнее, чем " + ravenclaws2.getName() + " " + ravenclaws2.getSurname());
+        } else if (ravenclaws2.getIntelligence() > ravenclaws1.getIntelligence()) {
+            System.out.println(ravenclaws2.getName() + " " + ravenclaws2.getSurname() + " умнее, чем " + ravenclaws1.getName() + " " + ravenclaws1.getSurname());
         } else {
             System.out.println("Ум у них одинаковый");
         }
-        if (a.getWisdom() < b.getWisdom()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " мудрее, чем " + b.getName() + " " + b.getSurname());
-        } else if (b.getWisdom() < a.getWisdom()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " мудрее, чем " + a.getName() + " " + a.getSurname());
+        if (ravenclaws1.getWisdom() > ravenclaws2.getWisdom()) {
+            System.out.println(ravenclaws1.getName() + " " + ravenclaws1.getSurname() + " мудрее, чем " + ravenclaws2.getName() + " " + ravenclaws2.getSurname());
+        } else if (ravenclaws2.getWisdom() > ravenclaws1.getWisdom()) {
+            System.out.println(ravenclaws2.getName() + " " + ravenclaws2.getSurname() + " мудрее, чем " + ravenclaws1.getName() + " " + ravenclaws1.getSurname());
         } else {
             System.out.println("В мудрости они одинаковы");
         }
-        if (a.getWit() < b.getWit()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " остроумнее, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getWit() < a.getWit()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " остроумнее, чем " + a.getName() + " " + a.getSurname());
+        if (ravenclaws1.getWit() > ravenclaws2.getWit()) {
+            System.out.println(ravenclaws1.getName() + " " + ravenclaws1.getSurname() + " остроумнее, чем  " + ravenclaws2.getName() + " " + ravenclaws2.getSurname());
+        } else if (ravenclaws2.getWit() > ravenclaws1.getWit()) {
+            System.out.println(ravenclaws2.getName() + " " + ravenclaws2.getSurname() + " остроумнее, чем " + ravenclaws1.getName() + " " + ravenclaws1.getSurname());
         } else {
             System.out.println("В остроумии они одинаковы");
         }
-        if (a.getCreativity() < b.getCreativity()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " более полон творчества, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getCreativity() < a.getCreativity()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " более полон творчества, чем " + a.getName() + " " + a.getSurname());
+        if (ravenclaws1.getCreativity() > ravenclaws2.getCreativity()) {
+            System.out.println(ravenclaws1.getName() + " " + ravenclaws1.getSurname() + " более полон творчества, чем  " + ravenclaws2.getName() + " " + ravenclaws2.getSurname());
+        } else if (ravenclaws2.getCreativity() > ravenclaws1.getCreativity()) {
+            System.out.println(ravenclaws2.getName() + " " + ravenclaws2.getSurname() + " более полон творчества, чем " + ravenclaws1.getName() + " " + ravenclaws1.getSurname());
         } else {
             System.out.println("В полноте творчества они одинаковы");
         }
     }
 
-    public static void comparisonStudents(Hogwarts[] hogwarts, String name1, String surname1, String name2, String surname2) {
-        Hogwarts a = null;
-        Hogwarts b = null;
-        for (int i = 0; i < hogwarts.length; i++) {
-            if (hogwarts[i].getName() == name1 && hogwarts[i].getSurname() == surname1) {
-                a = hogwarts[i];
-            }
-        }
-        for (int i = 0; i < hogwarts.length; i++) {
-            if (hogwarts[i].getName() == name2 && hogwarts[i].getSurname() == surname2) {
-                b = hogwarts[i];
-            }
-        }
-        if (a.getWitchcraft() < b.getWitchcraft()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " обладает большей мощностью магии, чем " + b.getName() + " " + b.getSurname());
-        } else if (b.getWitchcraft() < a.getWitchcraft()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " обладает большей мощностью магии, чем " + a.getName() + " " + a.getSurname());
+    public static void comparisonStudents(Hogwarts hogwarts1, Hogwarts hogwarts2) {
+        if (hogwarts1.getWitchcraft() > hogwarts2.getWitchcraft()) {
+            System.out.println(hogwarts1.getName() + " " + hogwarts1.getSurname() + " обладает большей мощностью магии, чем " + hogwarts2.getName() + " " + hogwarts2.getSurname());
+        } else if (hogwarts2.getWitchcraft() > hogwarts1.getWitchcraft()) {
+            System.out.println(hogwarts2.getName() + " " + hogwarts2.getSurname() + " обладает большей мощностью магии, чем " + hogwarts1.getName() + " " + hogwarts1.getSurname());
         } else {
             System.out.println("В мощности магии они одинаковы");
         }
-        if (a.getTransgressionKm() < b.getTransgressionKm()) {
-            System.out.println(a.getName() + " " + a.getSurname() + " трансгрессирует дальше, чем  " + b.getName() + " " + b.getSurname());
-        } else if (b.getTransgressionKm() < a.getTransgressionKm()) {
-            System.out.println(b.getName() + " " + b.getSurname() + " трансгрессирует дальше, чем " + a.getName() + " " + a.getSurname());
+        if (hogwarts1.getTransgressionKm() > hogwarts2.getTransgressionKm()) {
+            System.out.println(hogwarts1.getName() + " " + hogwarts1.getSurname() + " трансгрессирует дальше, чем  " + hogwarts2.getName() + " " + hogwarts2.getSurname());
+        } else if (hogwarts2.getTransgressionKm() > hogwarts1.getTransgressionKm()) {
+            System.out.println(hogwarts2.getName() + " " + hogwarts2.getSurname() + " трансгрессирует дальше, чем " + hogwarts1.getName() + " " + hogwarts1.getSurname());
         } else {
             System.out.println("Трансгрессируют на одинаковое расстояние");
         }

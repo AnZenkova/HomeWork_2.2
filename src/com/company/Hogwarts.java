@@ -1,5 +1,5 @@
 package com.company;
-public class Hogwarts {
+public abstract class Hogwarts {
 
     private String name;
     private String surname;

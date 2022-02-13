@@ -42,11 +42,11 @@ public class Main {
                 new Ravenclaw("Падма","Патил", 12,48,86,48,15,48),
                 new Ravenclaw("Маркус","Белби", 48,76,87,56,49,83),
         };
-        HogwartsService.printStudent(hogwarts,"Драко","Малфой");
-        HogwartsService.comparisonStudentsOfSameFaculty(gryffindors, "Гарри", "Поттер", "Гермиона", "Грейнжер");
-        HogwartsService.comparisonStudentsOfSameFaculty(slytherins, "Драко", "Малфой", "Грэхэм", "Монтегю");
-        HogwartsService.comparisonStudentsOfSameFaculty(hufflepuffs,"Седрик", "Диггори","Джастин", "Флин-Флетчер");
-        HogwartsService.comparisonStudentsOfSameFaculty(ravenclaws,"Чжоу","Чанг", "Маркус","Белби");
-        HogwartsService.comparisonStudents(hogwarts,"Падма","Патил","Грэхэм", "Монтегю");
+        HogwartsService.printStudent(hogwarts[6]);
+        HogwartsService.comparisonStudentsOfSameFaculty(gryffindors[0],gryffindors[2]);
+        HogwartsService.comparisonStudentsOfSameFaculty(slytherins[0], slytherins[1]);
+        HogwartsService.comparisonStudentsOfSameFaculty(hufflepuffs[1], hufflepuffs[2]);
+        HogwartsService.comparisonStudentsOfSameFaculty(ravenclaws[2], ravenclaws[0]);
+        HogwartsService.comparisonStudents(hogwarts[6],hogwarts[10]);
     }
 }
